@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, BookOpenText, Database } from "lucide-react";
 import { loadArticles } from "@/lib/content";
 import { site } from "@/data/site";
 
@@ -7,13 +7,25 @@ export const metadata: Metadata = { title: "Articles" };
 
 function getArticleCategory(title: string) {
   const normalizedTitle = title.toLowerCase();
+  if (normalizedTitle.includes("dbms") || normalizedTitle.includes("database")) return "Database Systems";
   if (normalizedTitle.includes("event-driven")) return "System Design · Microservices";
   if (normalizedTitle.includes("api gateway")) return "Software Architecture";
   if (normalizedTitle.includes("observability")) return "Distributed Systems · Observability";
+  if (/three[\s-]?tier/.test(normalizedTitle) || normalizedTitle.includes("system design")) return "Software Architecture";
   return "Technology & Computing";
 }
 
-function ArticleVisual({ category }: { category: string }) {
+function ArticleVisual({ title, category }: { title: string; category: string }) {
+  const normalizedTitle = title.toLowerCase();
+  if (category === "Database Systems") {
+    return (
+      <div className="article-visual article-visual-database" aria-hidden="true">
+        <Database size={28} strokeWidth={1.6} />
+        <div><i /><i /><i /></div>
+        <span>TABLES · QUERIES</span>
+      </div>
+    );
+  }
   if (category === "System Design · Microservices") {
     return (
       <div className="article-visual article-visual-events" aria-hidden="true">
@@ -23,7 +35,7 @@ function ArticleVisual({ category }: { category: string }) {
       </div>
     );
   }
-  if (category === "Software Architecture") {
+  if (category === "Software Architecture" && normalizedTitle.includes("api gateway")) {
     return (
       <div className="article-visual article-visual-gateway" aria-hidden="true">
         <span>Client</span><strong>API Gateway</strong>
@@ -43,7 +55,23 @@ function ArticleVisual({ category }: { category: string }) {
       </div>
     );
   }
-  return <div className="article-visual article-visual-generic" aria-hidden="true">Aa</div>;
+  if (category === "Software Architecture") {
+    return (
+      <div className="article-visual article-visual-architecture" aria-hidden="true">
+        <span>USER INTERFACE</span>
+        <i />
+        <span>APPLICATION</span>
+        <i />
+        <span>DATA LAYER</span>
+      </div>
+    );
+  }
+  return (
+    <div className="article-visual article-visual-generic" aria-hidden="true">
+      <BookOpenText size={28} strokeWidth={1.6} />
+      <span>TECH INSIGHT</span>
+    </div>
+  );
 }
 
 export default async function Articles() {
@@ -69,7 +97,7 @@ export default async function Articles() {
               const category = getArticleCategory(article.title);
               return (
                 <article className="article-row" key={article.href}>
-                  <ArticleVisual category={category} />
+                  <ArticleVisual title={article.title} category={category} />
                   <div className="article-details">
                     <p className="article-category">{category}</p>
                     <h3>{article.title}</h3>
