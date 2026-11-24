@@ -1,0 +1,58 @@
+import type { TeachingCaseStudy } from "@/types/teaching";
+
+export const databaseCases: TeachingCaseStudy[] = [
+  {
+    id: "03",
+    title: "What happens when two students are issued the same library book?",
+    category: "database",
+    categoryLabel: "Database Management Systems",
+    status: "delivered",
+    problem: "A college library maintains separate files for books, students, borrowing records, and fines. As transactions increase, duplicate records, inconsistent information, and conflicting book allocations become common problems.",
+    classroomActivity: "Students investigate the limitations of file-based systems and identify the entities, relationships, and constraints required to design a library database.",
+    approach: "Begin with real-world data management challenges before introducing database concepts, ER diagrams, relational schemas, keys, constraints, and SQL.",
+    learningOutcomes: [
+      "Understand the need for database management systems.",
+      "Translate requirements into relational schemas.",
+      "Understand redundancy, consistency, and data integrity.",
+      "Implement and query relational databases.",
+    ],
+    technologies: ["DBMS", "ER Modelling", "MySQL", "DDL", "DML", "Data Integrity", "Relational Schema"],
+    featured: true,
+  },
+  {
+    id: "04",
+    title: "How would you design the database behind an online learning platform?",
+    category: "database",
+    categoryLabel: "Database Management Systems",
+    status: "delivered",
+    problem: "An online learning platform must manage learners, instructors, courses, enrolments, payments, and learning progress. A user may have multiple roles, while courses may follow different delivery models.",
+    classroomActivity: "Students identify business requirements, entities, relationships, and cardinalities before developing ER and Enhanced ER models.",
+    approach: "Progress from basic entity relationships to specialization, generalization, inheritance, and participation constraints using realistic platform requirements.",
+    learningOutcomes: [
+      "Convert business requirements into data models.",
+      "Design complex entity relationships.",
+      "Understand supertype and subtype relationships.",
+      "Develop extensible database designs.",
+    ],
+    technologies: ["ER Modelling", "EER Modelling", "Cardinality", "Specialization", "Inheritance", "MySQL Workbench"],
+    featured: false,
+  },
+  {
+    id: "05",
+    title: "Can a database answer complex questions and reuse business logic automatically?",
+    category: "database",
+    categoryLabel: "Database Management Systems",
+    status: "delivered",
+    problem: "A university library network needs to identify the cheapest available books, determine which libraries hold the most expensive books, and repeatedly calculate information across multiple datasets.",
+    classroomActivity: "Students break complex business questions into smaller queries, combine information from multiple tables, and implement reusable database functions.",
+    approach: "Progress from simple SQL queries to joins, subqueries, aggregate functions, stored functions, and stored procedures through practical business requirements.",
+    learningOutcomes: [
+      "Translate business questions into SQL queries.",
+      "Apply joins and nested queries.",
+      "Develop reusable database functions.",
+      "Understand database-side business logic.",
+    ],
+    technologies: ["SQL", "Subqueries", "Joins", "Aggregate Functions", "Stored Functions", "Stored Procedures", "MySQL"],
+    featured: false,
+  },
+];
