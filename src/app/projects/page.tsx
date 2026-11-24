@@ -4,7 +4,6 @@ import { site } from "@/data/site";
 import { loadProjects } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Projects" };
-export const revalidate = 1800;
 
 function ProjectVisual({ type }: { type?: "event-driven" | "canteen" | "observability" }) {
   if (type === "event-driven") {

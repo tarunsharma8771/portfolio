@@ -3,7 +3,6 @@ import { ArrowUpRight, CodeXml, Network, Play, Cpu } from "lucide-react";
 import { loadVideos } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Videos" };
-export const revalidate = 1800;
 
 const plannedTopics = [
   {

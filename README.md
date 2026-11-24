@@ -41,11 +41,15 @@ For a fully CMS-editable site, add schemas and queries for all pages in a subseq
 
 ## Deployment
 
-1. Create a **public GitHub repository** and push this folder.
-2. Import the repository in **Vercel** (Next.js is auto-detected).
-3. Add environment variables in Vercel if using Sanity or YouTube.
-4. Configure `NEXT_PUBLIC_SITE_URL` to the final deployed origin, e.g. `https://your-domain.example`.
-5. Deploy. Every push to the production branch can trigger a new deployment.
+### GitHub Pages
+
+The `Deploy to GitHub Pages` workflow builds a static export and publishes it whenever changes are pushed to `main`. In the repository settings, open **Settings → Pages** and set the source to **GitHub Actions**. The project site is published at `https://tarunsharma8771.github.io/portfolio/`.
+
+The GitHub Pages build sets the repository base path and canonical site URL automatically. Optional public Sanity identifiers and the YouTube channel ID can be added under **Settings → Secrets and variables → Actions → Variables**. Since Pages is static hosting, feed and CMS content is captured at build time and refreshed on the next deployment.
+
+### Vercel
+
+Import the repository in Vercel, add any Sanity or YouTube environment variables, and set `NEXT_PUBLIC_SITE_URL` to the deployed origin. Vercel can run the app with its server features, unlike GitHub Pages.
 
 Do not commit `.env.local`, API tokens, private student data, or copyrighted student submissions.
 

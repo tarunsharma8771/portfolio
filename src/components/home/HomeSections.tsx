@@ -8,6 +8,10 @@ import {
 } from "lucide-react";
 import { focusAreas } from "@/data/home";
 
+const profileImage = process.env.GITHUB_PAGES === "true"
+  ? "/portfolio/tarun-sharma.png"
+  : "/tarun-sharma.png";
+
 export function HomeHero() {
   return (
     <section className="hero">
@@ -21,7 +25,7 @@ export function HomeHero() {
           <div className="hero-intro">
             <Image
               className="profile-photo"
-              src="/tarun-sharma.png"
+              src={profileImage}
               alt="Portrait of Tarun Kumar"
               width={126}
               height={126}

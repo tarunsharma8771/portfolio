@@ -4,7 +4,6 @@ import { loadArticles } from "@/lib/content";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = { title: "Articles" };
-export const revalidate = 1800;
 
 function getArticleCategory(title: string) {
   const normalizedTitle = title.toLowerCase();
