@@ -9,8 +9,8 @@ export const teachingCategories = [
   { id: "all", label: "All" },
   { id: "programming", label: "Programming Fundamentals" },
   { id: "database", label: "Database Management Systems" },
-  { id: "cybersecurity", label: "Cybersecurity" },
   { id: "software-development", label: "Software Development" },
+  { id: "cybersecurity", label: "Cybersecurity" },
   { id: "distributed-systems", label: "Distributed Systems" },
   { id: "ai-education", label: "AI in Education" },
 ] as const;

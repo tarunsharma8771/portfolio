@@ -3,38 +3,59 @@ import type { TeachingCaseStudy } from "@/types/teaching";
 export const softwareDevelopmentCases: TeachingCaseStudy[] = [
   {
     id: "09",
-    title: "How can we make a college canteen smarter?",
+    title: "Developing Smart Canteen for campus dining",
     category: "software-development",
     categoryLabel: "Software Development",
     status: "delivered",
-    problem: "Traditional college canteens face challenges in managing food orders, customer interactions, and student feedback. How can software improve the overall experience?",
-    classroomActivity: "Students develop a Python-based application incorporating web interfaces, APIs, speech-based interaction, and sentiment analysis.",
-    approach: "Introduce application development through incremental real-world requirements, allowing students to integrate programming fundamentals, web technologies, and intelligent services.",
+    problem:
+      "A campus canteen needs to manage orders, make it easier for students to interact with the service, and make sense of their feedback.",
+    classroomActivity:
+      "Students develop a Python application with web interfaces, APIs, speech interaction, and sentiment analysis.",
+    approach:
+      "Introduce requirements in stages so students can connect programming, web development, and API integration within one application.",
     learningOutcomes: [
-      "Translate real-world requirements into software features.",
-      "Develop web-based applications.",
-      "Integrate external APIs and intelligent services.",
-      "Understand end-to-end application workflows.",
+      "Translate a service need into an application feature.",
+      "Build a web interface and integrate it with APIs.",
+      "Integrate speech interaction and sentiment analysis into a Python application.",
+      "Explain how information moves through the application.",
     ],
-    technologies: ["Python", "Flask", "REST APIs", "VADER", "Sentiment Analysis", "Speech Recognition"],
+    technologies: [
+      "Python",
+      "Flask",
+      "REST APIs",
+      "VADER",
+      "Sentiment Analysis",
+      "Speech Recognition",
+    ],
     featured: true,
   },
   {
     id: "10",
-    title: "How do we turn a real-world problem into a working software product?",
+    title: "From requirements to a working software application",
     category: "software-development",
     categoryLabel: "Software Development",
     status: "delivered",
-    problem: "Students often learn programming, databases, and software design independently but struggle to combine these concepts into a complete working application.",
-    classroomActivity: "Student teams identify a problem, gather requirements, prepare architecture and design diagrams, develop a proof of concept, and implement and demonstrate a working application.",
-    approach: "Follow an incremental software development lifecycle integrating user interfaces, Java, MySQL, system design, prototyping, testing, and integration.",
+    problem:
+      "Building a complete application requires students to connect requirements, software design, implementation, and data storage.",
+    classroomActivity:
+      "Student teams define a problem, gather requirements, prepare architecture and design diagrams, develop a proof of concept, and demonstrate a working application.",
+    approach:
+      "Develop the application in stages, bringing together user interfaces, Java application logic, MySQL storage, testing, and integration.",
     learningOutcomes: [
-      "Translate requirements into software designs.",
-      "Develop high-level application architectures.",
-      "Integrate application and database layers.",
-      "Develop, test, and demonstrate a working product.",
+      "Translate requirements into a software design.",
+      "Use diagrams to communicate architecture and data relationships.",
+      "Integrate application logic with a database.",
+      "Test and demonstrate a working application against its requirements.",
     ],
-    technologies: ["Java", "MySQL", "System Design", "ER Diagrams", "Class Diagrams", "Prototyping", "SDLC"],
+    technologies: [
+      "Java",
+      "MySQL",
+      "System Design",
+      "ER Diagrams",
+      "Class Diagrams",
+      "Prototyping",
+      "SDLC",
+    ],
     featured: false,
   },
 ];

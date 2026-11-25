@@ -1,70 +1,91 @@
 import type { Metadata } from "next";
-import { ArrowRight, CodeXml, Layers3, Lightbulb, Rocket, Target } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BookOpen, BrainCircuit, CodeXml, Lightbulb, Target } from "lucide-react";
 import { TeachingCaseStudies } from "@/components/teaching/TeachingCaseStudies";
-export const metadata: Metadata = { title: "Teaching Innovation" };
+import { teachingCases } from "@/data/teaching";
+
+export const metadata: Metadata = {
+  title: "Teaching and Assessment",
+  description: "Undergraduate computing topics, teaching philosophy, and documented classroom case studies.",
+};
+
+const classroomTopics = [...new Set(
+  teachingCases.filter((study) => study.status === "delivered").map((study) => study.categoryLabel),
+)];
+
 export default function Teaching() {
   return (
     <>
-      <section className="teaching-hero">
+      <header className="teaching-hero">
         <div className="container teaching-hero-inner">
           <div className="teaching-hero-copy">
-            <p className="eyebrow">Teaching innovation</p>
-            <h1>Real Problems.<br />Practical Learning.<br />Lasting Impact.</h1>
-            <p>
-              A problem-first approach that connects academic concepts with real-world engineering,
-              hands-on practice, and independent thinking.
+            <p className="eyebrow">Undergraduate computing education</p>
+            <h1>Real Problems. Practical Learning.<br />Lasting Impact.</h1>
+            <p className="teaching-hero-description">
+              I use real engineering problems to help students understand computing principles,
+              build solutions, and explain their decisions.
             </p>
+            <Link className="text-link" href="#teaching-case-studies">
+              Browse classroom case studies <ArrowRight size={16} aria-hidden="true" />
+            </Link>
           </div>
+
           <div className="teaching-journey" aria-hidden="true">
             <svg className="journey-landscape" viewBox="0 0 600 320" preserveAspectRatio="none">
-              <path className="journey-mountain-back" d="M0 300 130 225l72 35 128-115 81 72 109-120 80 73v130Z" />
-              <path className="journey-mountain-front" d="m0 300 110-45 78 25 103-52 86 31 105-54 118 63v52H0Z" />
-              <path className="journey-path" d="M24 252c85 3 81-75 172-75s93-62 180-62 89-66 200-66" />
+              <path className="journey-mountain-back" d="M0 320 90 252l58 30 104-76 66 30 108-89 65 40 60-88 49 51v170Z" />
+              <path className="journey-mountain-front" d="M0 320 123 275l48 18 109-60 57 28 112-60 65 22 86-74v171Z" />
+              <path className="journey-path" d="M72 246c61 0 97-65 156-65s96-61 156-61 96-61 150-61" />
             </svg>
-            <div className="journey-node journey-node-problem">
-              <span><Target size={23} /></span><strong>Problem</strong><small>(Real-World)</small>
-            </div>
-            <div className="journey-node journey-node-learn">
-              <span><CodeXml size={23} /></span><strong>Learn</strong><small>(Core Concepts)</small>
-            </div>
-            <div className="journey-node journey-node-build">
-              <span><Layers3 size={23} /></span><strong>Build</strong><small>(Hands-On)</small>
-            </div>
-            <div className="journey-node journey-node-think">
-              <span><Rocket size={23} /></span><strong>Think</strong><small>(Independently)</small>
-            </div>
+            <div className="journey-node journey-node-problem"><span><Target size={22} /></span><strong>Problem</strong></div>
+            <div className="journey-node journey-node-learn"><span><BookOpen size={22} /></span><strong>Learn</strong></div>
+            <div className="journey-node journey-node-build"><span><CodeXml size={22} /></span><strong>Build</strong></div>
+            <div className="journey-node journey-node-think"><span><BrainCircuit size={22} /></span><strong>Think</strong></div>
           </div>
         </div>
-      </section>
+      </header>
 
       <section className="teaching-framework-section">
         <div className="container">
-          <p className="eyebrow">My teaching approach</p>
+          <p className="eyebrow">Teaching philosophy</p>
           <h2>The What · Why · How Framework</h2>
           <div className="teaching-framework">
             <article className="framework-card framework-what">
-              <Target size={28} />
-              <div><h3>What</h3><p>Identify a meaningful real-world problem.</p></div>
+              <Target size={28} aria-hidden="true" />
+              <div><h3>What</h3><p>Define the problem.</p></div>
             </article>
             <ArrowRight className="framework-arrow" size={20} aria-hidden="true" />
             <article className="framework-card framework-why">
-              <Lightbulb size={28} />
-              <div><h3>Why</h3><p>Understand the need for the concept.</p></div>
+              <Lightbulb size={28} aria-hidden="true" />
+              <div><h3>Why</h3><p>Understand the principle.</p></div>
             </article>
             <ArrowRight className="framework-arrow" size={20} aria-hidden="true" />
             <article className="framework-card framework-how">
-              <CodeXml size={28} />
-              <div><h3>How</h3><p>Apply, build, and validate a solution.</p></div>
+              <CodeXml size={28} aria-hidden="true" />
+              <div><h3>How</h3><p>Apply and test.</p></div>
             </article>
           </div>
-          <div className="teaching-motto">
-            <Target size={24} aria-hidden="true" />
-            <span>Beyond Learning Concepts — Learning to Think.</span>
-          </div>
+          <p className="teaching-philosophy">
+            Students test their designs, justify their decisions, and apply the same principles to new problems.
+          </p>
         </div>
       </section>
 
       <TeachingCaseStudies />
+
+      <section className="section" id="teaching-areas">
+        <div className="container">
+          <h2>Undergraduate teaching areas</h2>
+          <p>Topics covered in delivered classroom activities</p>
+          <ul className="teaching-topic-list">
+            {classroomTopics.map((topic) => <li key={topic}>{topic}</li>)}
+          </ul>
+          <h3>Additional teaching area</h3>
+          <p>Distributed systems, drawing on industry experience with microservices and observability.</p>
+          <Link className="text-link" href="/ai-education">
+            Explore AI in my classroom <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

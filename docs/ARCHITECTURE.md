@@ -5,7 +5,7 @@ Visitor browser
     │ HTTPS
     ▼
 Vercel / Next.js App Router
-    ├── static routes: Home, About, Teaching, Research, etc.
+    ├── static routes: Home, About, Teaching, and supporting pages
     ├── reusable components + local typed content
     └── server-side content loaders (Articles / Videos / Projects)
            ├── optional Sanity read-only API

@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client";
-import type { Article, Video, ContentItem } from "@/types/content";
+import type { Article, Video, ProjectItem } from "@/types/content";
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2025-02-01";
@@ -25,7 +25,7 @@ export async function getCmsVideos(): Promise<Video[]> {
     return data.filter(x => /^https:\/\//.test(x.url)).map(x => ({ title:x.title, href:x.url, date:x.publishedAt, source:"CMS" }));
   } catch { return []; }
 }
-export async function getCmsProjects(): Promise<ContentItem[]> {
+export async function getCmsProjects(): Promise<ProjectItem[]> {
   if (!client) return [];
   try {
     const data = await client.fetch<Array<{title:string;description:string;url?:string;status?:string}>>(

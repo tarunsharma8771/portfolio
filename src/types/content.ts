@@ -1,5 +1,3 @@
-export type LinkItem = { label: string; href: string };
-export type ContentItem = { title: string; description: string; href?: string; category?: string; status?: string };
 export type ProjectItem = {
   title: string;
   description: string;
@@ -7,7 +5,7 @@ export type ProjectItem = {
   category?: string;
   status?: string;
   technologies?: string[];
-  relatedArticle?: LinkItem;
+  relatedArticle?: { label: string; href: string };
   visual?: "event-driven" | "canteen" | "observability";
 };
 export type Article = { title: string; href: string; summary?: string; date?: string; source: "Medium" | "CMS" };

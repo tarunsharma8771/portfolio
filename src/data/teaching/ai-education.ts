@@ -3,20 +3,29 @@ import type { TeachingCaseStudy } from "@/types/teaching";
 export const aiEducationCases: TeachingCaseStudy[] = [
   {
     id: "12",
-    title: "Can AI help students learn without doing the work for them?",
+    title: "Using generative AI as a guide in programming",
     category: "ai-education",
     categoryLabel: "AI in Education",
     status: "delivered",
-    problem: "Generative AI can provide instant programming solutions, but unrestricted dependence on AI-generated answers may reduce students' independent thinking and problem-solving abilities.",
-    classroomActivity: "Students compare direct AI-generated solutions with guided AI interactions involving hints, questions, explanations, debugging, and reflection.",
-    approach: "Design a structured AI-assisted learning process incorporating guided prompts, incremental problem-solving, learning checkpoints, and independent assessment.",
+    problem:
+      "When generative AI supplies a complete solution, it can be difficult to tell which concepts a student understands and can apply independently.",
+    classroomActivity:
+      "Students compare a complete AI-generated answer with a guided exchange that uses hints, questions, explanations, and debugging prompts.",
+    approach:
+      "Ask students to reason through intermediate steps, check AI suggestions against the task, and explain their decisions before completing a related task independently.",
     learningOutcomes: [
-      "Critically evaluate AI-generated solutions.",
-      "Demonstrate conceptual understanding independently.",
-      "Develop computational thinking and problem-solving skills.",
-      "Practice responsible use of generative AI.",
+      "Formulate a prompt that asks for a hint or explanation.",
+      "Evaluate an AI suggestion against the requirements and expected behaviour.",
+      "Explain and test a solution using their own reasoning.",
+      "Apply the same concept independently to a related problem.",
     ],
-    technologies: ["Generative AI", "Prompt Design", "Formative Assessment", "Responsible AI", "Computational Thinking"],
+    technologies: [
+      "Generative AI",
+      "Prompt Design",
+      "Formative Assessment",
+      "Responsible AI",
+      "Computational Thinking",
+    ],
     featured: true,
   },
 ];

@@ -17,4 +17,4 @@
 - Distinguish *Delivered* from *Proposed*.
 - Confirm all profile URLs before adding them.
 - Confirm rights and permissions for student projects, images, and feedback.
-- Do not claim research findings or enrollment before they exist.
+- Publish documented outcomes and enrolment figures with their source and context.

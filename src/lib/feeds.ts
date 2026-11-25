@@ -27,10 +27,30 @@ export async function getYouTubeVideos(): Promise<Video[]> {
     }).slice(0, 20);
   } catch { return []; }
 }
+function linkKey(href: string): string {
+  const fallbackKey = href.split(/[?#]/)[0].replace(/\/$/, "");
+  if (!URL.canParse(href)) return fallbackKey;
+
+  const url = new URL(href);
+  const path = url.pathname.replace(/\/$/, "");
+  const isYouTube = url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com");
+  let videoId: string | null | undefined;
+
+  if (isYouTube) {
+    videoId = path === "/watch"
+      ? url.searchParams.get("v")
+      : path.match(/^\/(?:shorts|live|embed)\/([^/]+)$/)?.[1];
+  } else if (url.hostname === "youtu.be") {
+    videoId = path.match(/^\/([^/]+)$/)?.[1];
+  }
+  if (videoId) return `youtube:${videoId}`;
+  return fallbackKey;
+}
+
 export function dedupeByHref<T extends {href:string}>(items:T[]):T[] {
   const unique = new Map<string, T>();
   for (const item of items) {
-    const key = item.href.split(/[?#]/)[0].replace(/\/$/, "");
+    const key = linkKey(item.href);
     if (!unique.has(key)) unique.set(key, item);
   }
   return Array.from(unique.values());

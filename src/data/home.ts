@@ -32,8 +32,8 @@ export const focusAreas = [
     icon: CodeXml,
   },
   {
-    title: "Student Success & Impact",
-    description: "Fostering deeper understanding, practical competence, and industry readiness through mentoring and applied learning.",
+    title: "Student Learning & Assessment",
+    description: "Assessing how students apply concepts, explain their decisions, and solve problems independently.",
     href: "/student-impact",
     icon: Users,
   },

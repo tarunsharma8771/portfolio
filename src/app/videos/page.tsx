@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ArrowUpRight, CodeXml, Network, Play, Cpu } from "lucide-react";
 import { loadVideos } from "@/lib/content";
 
@@ -7,17 +8,20 @@ export const metadata: Metadata = { title: "Videos" };
 const plannedTopics = [
   {
     title: "Concepts Explained",
-    description: "System design, distributed systems, and core computing concepts.",
+    description:
+      "System design, distributed systems, and core computing concepts.",
     icon: Network,
   },
   {
     title: "Hands-On Learning",
-    description: "Programming, practical demonstrations, and real-world implementations.",
+    description:
+      "Programming, practical demonstrations, and real-world implementations.",
     icon: CodeXml,
   },
   {
     title: "AI & Emerging Technologies",
-    description: "Exploring modern technologies and their practical applications.",
+    description:
+      "Exploring modern technologies and their practical applications.",
     icon: Cpu,
   },
 ];
@@ -30,15 +34,23 @@ export default async function Videos() {
         <div className="container videos-hero-inner">
           <div className="videos-hero-copy">
             <p className="eyebrow">Videos &amp; visual learning</p>
-            <h1>Complex Concepts.<br />Simple Explanations.</h1>
+            <h1>
+              Complex Concepts.
+              <br />
+              Simple Explanations.
+            </h1>
             <p>
-              Making computing concepts accessible through visual explanations,
-              practical demonstrations, and real-world examples.
+              Visual explanations and practical demonstrations of computing
+              concepts.
             </p>
           </div>
-          <div className="video-preview" role="img" aria-label="Illustration of a visual computing lesson">
+          <div className="video-preview" aria-hidden="true">
             <div className="video-browser">
-              <div className="video-browser-bar"><i /><i /><i /></div>
+              <div className="video-browser-bar">
+                <i />
+                <i />
+                <i />
+              </div>
               <div className="video-browser-canvas">
                 <span />
                 <span />
@@ -50,23 +62,6 @@ export default async function Videos() {
               </div>
               <div className="video-browser-progress" />
             </div>
-            <p>Understand · Visualize · Apply</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="videos-planned">
-        <div className="container">
-          <p className="eyebrow">Planned content</p>
-          <h2>What to Expect</h2>
-          <div className="video-topic-grid">
-            {plannedTopics.map(({ title, description, icon: Icon }) => (
-              <article key={title}>
-                <Icon size={20} aria-hidden="true" />
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -79,8 +74,20 @@ export default async function Videos() {
             <div className="published-video-list">
               {videos.map((video) => (
                 <article key={video.href}>
-                  <div><h3>{video.title}</h3><p>{video.source}{video.date ? ` · ${new Date(video.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}` : ""}</p></div>
-                  <a href={video.href} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${video.title}`}>
+                  <div>
+                    <h3>{video.title}</h3>
+                    <p>
+                      {video.source === "YouTube"
+                        ? "YouTube"
+                        : "Video resource"}
+                    </p>
+                  </div>
+                  <a
+                    href={video.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Watch ${video.title}`}
+                  >
                     Watch <ArrowUpRight size={15} />
                   </a>
                 </article>
@@ -89,14 +96,36 @@ export default async function Videos() {
           </div>
         </section>
       ) : (
-        <section className="videos-coming-soon">
-          <div className="container">
-            <Play size={22} aria-hidden="true" />
-            <p className="eyebrow">Coming soon</p>
-            <h2>A New Way to Learn.</h2>
-            <p>Educational videos and technical walkthroughs are planned.<br />New content will be shared here as it becomes available.</p>
-          </div>
-        </section>
+        <>
+          <section className="videos-planned">
+            <div className="container">
+              <h2>What to Expect</h2>
+              <div className="video-topic-grid">
+                {plannedTopics.map(({ title, description, icon: Icon }) => (
+                  <article key={title}>
+                    <Icon size={20} aria-hidden="true" />
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+          <section className="videos-coming-soon">
+            <div className="container">
+              <Play size={22} aria-hidden="true" />
+              <p className="eyebrow">Coming soon</p>
+              <h2>Educational videos are in development.</h2>
+              <p>
+                Explore the published articles for explanations and examples you
+                can use now.
+              </p>
+              <Link className="text-link" href="/articles">
+                Browse articles <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </div>
+          </section>
+        </>
       )}
     </>
   );

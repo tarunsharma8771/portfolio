@@ -1,7 +1,6 @@
 import {
   BookOpen,
   BriefcaseBusiness,
-  FlaskConical,
   Github,
   GraduationCap,
   Linkedin,
@@ -10,32 +9,50 @@ import {
 } from "lucide-react";
 import { site } from "@/data/site";
 
-export const opportunities = [
+export const collaborationAreas = [
   {
-    title: "Academic Collaboration",
-    description: "Teaching, curriculum development, guest lectures, and academic initiatives.",
+    title: "Academic collaboration",
+    description:
+      "Undergraduate teaching, curriculum development, and guest lectures.",
     icon: GraduationCap,
   },
   {
-    title: "Research Collaboration",
-    description: "Computing education, applied AI, and industry-aligned learning.",
-    icon: FlaskConical,
-  },
-  {
-    title: "Student Mentoring",
-    description: "Project guidance, technical development, and industry readiness.",
+    title: "Student mentoring",
+    description:
+      "Project guidance, technical development, and engineering practice.",
     icon: UsersRound,
   },
   {
-    title: "Technology Consulting",
-    description: "Software architecture, distributed systems, and cloud technologies.",
+    title: "Technology consulting",
+    description:
+      "Software architecture, distributed systems, and cloud technologies.",
     icon: BriefcaseBusiness,
   },
 ];
 
 export const contactChannels = [
-  { name: "Email", description: "Direct enquiries", href: site.email ? `mailto:${site.email}` : undefined, icon: Mail },
-  { name: "LinkedIn", description: "Professional network", href: site.linkedin || undefined, icon: Linkedin },
-  { name: "GitHub", description: "Technical contributions", href: site.github || undefined, icon: Github },
-  { name: "Medium", description: "Articles & insights", href: site.medium, icon: BookOpen },
+  {
+    name: "Email",
+    href: site.email ? `mailto:${site.email}` : "",
+    description: "Academic enquiries and student questions",
+    icon: Mail,
+  },
+  {
+    name: "LinkedIn",
+    href: site.linkedin,
+    description: "Professional profile",
+    icon: Linkedin,
+  },
+  {
+    name: "GitHub",
+    href: site.github,
+    description: "Technical work and source code",
+    icon: Github,
+  },
+  {
+    name: "Medium",
+    href: site.medium,
+    description: "Published articles and insights",
+    icon: BookOpen,
+  },
 ];

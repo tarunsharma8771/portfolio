@@ -4,7 +4,7 @@ A minimalist, modular academic portfolio built with **Next.js (App Router), Type
 
 ## Pages
 
-Home, About, Teaching Innovation, AI in Education, Industry-Connected Learning, Project-Based Learning, Student Success & Impact, Projects, Research, Articles, Videos, and Contact.
+Home, About, Teaching, AI in Education, Industry-Connected Learning, Project-Based Learning, Student Learning & Assessment, Projects, Articles, Videos, and Contact.
 
 ## Local development
 
@@ -46,6 +46,8 @@ For a fully CMS-editable site, add schemas and queries for all pages in a subseq
 The `Deploy to GitHub Pages` workflow builds a static export and publishes it whenever changes are pushed to `main`. In the repository settings, open **Settings → Pages** and set the source to **GitHub Actions**. The project site is published at `https://tarunsharma8771.github.io/portfolio/`.
 
 The GitHub Pages build sets the repository base path and canonical site URL automatically. Optional public Sanity identifiers and the YouTube channel ID can be added under **Settings → Secrets and variables → Actions → Variables**. Since Pages is static hosting, feed and CMS content is captured at build time and refreshed on the next deployment.
+
+After publishing an article or video, open **Actions → Deploy to GitHub Pages → Run workflow** to refresh the live site manually.
 
 ### Vercel
 

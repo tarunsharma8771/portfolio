@@ -3,38 +3,54 @@ import type { TeachingCaseStudy } from "@/types/teaching";
 export const programmingCases: TeachingCaseStudy[] = [
   {
     id: "01",
-    title: "How can we make hardware sense, think and act automatically?",
+    title: "Designing temperature control with C",
     category: "programming",
     categoryLabel: "Programming Fundamentals",
     status: "delivered",
-    problem: "A temperature sensor can measure heat, but how does a machine decide when to switch on a cooling fan? Hardware alone cannot make intelligent decisions without programmed instructions.",
-    classroomActivity: "Students explore a temperature-controlled system involving sensors, microcontrollers, mechanical components, and software. They translate temperature readings into logical decisions.",
-    approach: "Introduce programming through a physical engineering problem. Progress from understanding the system to designing an algorithm and implementing decision-making logic using C.",
+    problem:
+      "A temperature sensor provides a reading. The control program must decide when to switch a cooling fan on or off.",
+    classroomActivity:
+      "Students examine how a sensor, a microcontroller, and a fan work together. They translate temperature readings into control decisions.",
+    approach:
+      "Start with the behaviour the system needs, express it as an algorithm, and implement the decision logic in C.",
     learningOutcomes: [
-      "Understand the relationship between hardware and software.",
-      "Translate engineering requirements into algorithms.",
-      "Apply variables, conditions, and loops.",
-      "Recognize programming applications in embedded systems.",
+      "Explain how the sensor, software, and fan interact.",
+      "Translate a temperature-control requirement into an algorithm.",
+      "Use variables, conditions, and loops to implement control logic.",
     ],
-    technologies: ["C Programming", "Algorithms", "Control Structures", "Microcontrollers", "Embedded Systems"],
+    technologies: [
+      "C Programming",
+      "Algorithms",
+      "Control Structures",
+      "Microcontrollers",
+      "Embedded Systems",
+    ],
     featured: true,
   },
   {
     id: "02",
-    title: "How can we prevent a simple program from becoming difficult to maintain?",
+    title: "Making a temperature-monitoring program easier to maintain",
     category: "programming",
     categoryLabel: "Programming Fundamentals",
     status: "delivered",
-    problem: "As a temperature-control program grows, repeated instructions and interconnected logic make it difficult to understand, modify, and maintain.",
-    classroomActivity: "Students decompose a temperature-monitoring program into independent responsibilities such as reading input, processing temperature, making decisions, and controlling output.",
-    approach: "Introduce functions as a solution to increasing software complexity rather than simply as a programming language feature.",
+    problem:
+      "As a temperature-monitoring program grows, repeated instructions and tightly coupled logic make changes harder to understand and verify.",
+    classroomActivity:
+      "Students separate input, temperature processing, decision-making, and output into functions.",
+    approach:
+      "Use the growing program to introduce functional decomposition and clarify what each function receives and returns.",
     learningOutcomes: [
-      "Decompose complex problems into smaller tasks.",
-      "Understand function inputs and outputs.",
-      "Develop reusable programming logic.",
-      "Improve code readability and maintainability.",
+      "Break a program into functions with clear responsibilities.",
+      "Specify the inputs and outputs of a function.",
+      "Explain how a revised structure reduces repeated logic and supports maintenance.",
     ],
-    technologies: ["C Programming", "Functions", "Modular Programming", "Code Reusability", "Problem Decomposition"],
+    technologies: [
+      "C Programming",
+      "Functions",
+      "Modular Programming",
+      "Code Reusability",
+      "Problem Decomposition",
+    ],
     featured: false,
   },
 ];
