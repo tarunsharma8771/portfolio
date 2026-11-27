@@ -3,7 +3,7 @@ export const site = {
   name: "Tarun Kumar",
   title: "Technology Leader & Computing Educator",
   tagline: "Teach · Innovate · Build · Impact",
-  summary: "Technology leader and computing educator with 20 years of industry experience, 8+ years mentoring 100+ graduates in industry, and six months mentoring undergraduate students in college.",
+  summary: "Technology leader and computing educator with 20 years of industry experience and 8+ years mentoring 100+ graduates in industry. Visiting Faculty teaching undergraduate computing since 2026.",
   location: "Pune, India",
   medium: "https://medium.com/@tarun515",
   // Add verified profile URLs before publishing; never insert guessed handles.

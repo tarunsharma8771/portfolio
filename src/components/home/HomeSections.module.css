@@ -81,6 +81,12 @@
   line-height: 1.1;
 }
 
+.metrics li:last-child strong {
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.32;
+  text-wrap: balance;
+}
+
 .metrics span {
   display: block;
   margin-top: 5px;

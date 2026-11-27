@@ -34,11 +34,11 @@ export function HomeHero() {
           Visiting Faculty · Symbiosis Institute of Technology · {site.location}
         </p>
         <div className={styles.actions}>
-          <Link className="btn btn-primary" href="/about">
-            About me <ArrowRight size={17} aria-hidden="true" />
-          </Link>
-          <Link className="btn btn-secondary" href="/teaching">
+          <Link className="btn btn-primary" href="/teaching">
             Explore my teaching <ArrowRight size={17} aria-hidden="true" />
+          </Link>
+          <Link className="btn btn-secondary" href="/about">
+            About me <ArrowRight size={17} aria-hidden="true" />
           </Link>
         </div>
       </div>
@@ -51,9 +51,9 @@ export function HomeExperienceHighlights() {
     <section className="container" aria-labelledby="experience-highlights">
       <h2 className="visually-hidden" id="experience-highlights">Experience at a glance</h2>
       <ul className={styles.metrics}>
-        {experienceHighlights.map(({ duration, description }) => (
-          <li key={duration}>
-            <strong>{duration}</strong>
+        {experienceHighlights.map(({ title, description }) => (
+          <li key={title}>
+            <strong>{title}</strong>
             <span>{description}</span>
           </li>
         ))}

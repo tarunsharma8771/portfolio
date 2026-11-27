@@ -7,9 +7,21 @@ export const metadata: Metadata = {
 };
 
 const milestones = [
-  { year: "2005", title: "Industry & Technology", description: "Enterprise software and architecture" },
-  { year: "2017", title: "Training & Mentoring", description: "Technical training for graduate engineers" },
-  { year: "2026", title: "Teaching & Academia", description: "Undergraduate computing education" },
+  {
+    year: "2005",
+    title: "Enterprise Software Engineering",
+    description: "Software development and system architecture for enterprise applications.",
+  },
+  {
+    year: "2017",
+    title: "Graduate Engineer Development",
+    description: "Began training and mentoring graduate engineers as part of my role in industry.",
+  },
+  {
+    year: "2026",
+    title: "Undergraduate Computing Education",
+    description: "Began teaching undergraduate computing as Visiting Faculty.",
+  },
 ];
 
 const interests = [
@@ -48,8 +60,16 @@ export default function About() {
           <p className="eyebrow">About me</p>
           <h1>Bridging Industry &amp; Academia</h1>
           <p className="about-intro">
-            My work in enterprise software and architecture led to mentoring graduate engineers and
-            teaching undergraduate computing.
+            My background spans enterprise software development, systems architecture, and
+            technology leadership. Training and mentoring graduate engineers in industry has
+            shaped how I teach undergraduate computing as Visiting Faculty.
+          </p>
+          <p className="about-intro">
+            My teaching focuses on developing independent engineering judgment. Students learn
+            to define a real-world problem, gather the information they need, and evaluate
+            possible solutions. They use AI to explore alternatives and challenge assumptions,
+            then test their chosen solution against the original requirements and explain what
+            the results show.
           </p>
         </div>
       </header>
